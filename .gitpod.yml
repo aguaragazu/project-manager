@@ -8,11 +8,13 @@ ports:
     onOpen: ignore
   - port: 8002
     onOpen: open-preview
+  - port: 9000
+    onOpen: ignore
 
 tasks:
   - name: MySQL
     command: >
-      mysql -e "show databases;" && mysql -e "create database bs_projectman;"
+      mysql -e "create database bs_projectman;"
   - name: Nginx
     command: >
       nginx && multitail /var/log/nginx/access.log -I /var/log/nginx/error.log
@@ -35,3 +37,4 @@ vscode:
     - esbenp.prettier-vscode@1.9.0:2CbWfKbh7qXJy3Ad4n/XgA==
     - ms-vscode.vscode-typescript-tslint-plugin@1.2.2:Jw3ra3MlKUzHrWQODXxjUw==
     - softwaredotcom.swdc-vscode@1.1.29:wMSd8WGlhnel1EhB8a47UA==
+    - felixfbecker.php-debug@1.13.0:WX8Y3EpQk3zgahy41yJtNQ==
